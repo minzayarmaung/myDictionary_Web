@@ -5,13 +5,35 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Result {
 
-    private String state;
+    private boolean state;
     private String msgCode;
     private String msgDesc;
+
+    public boolean getState() {
+        return state;
+    }
+
+    public void setState(boolean state) {
+        this.state = state;
+    }
+
+    public String getMsgCode() {
+        return msgCode;
+    }
+
+    public void setMsgCode(String msgCode) {
+        this.msgCode = msgCode;
+    }
+
+    public String getMsgDesc() {
+        return msgDesc;
+    }
+
+    public void setMsgDesc(String msgDesc) {
+        this.msgDesc = msgDesc;
+    }
 }
