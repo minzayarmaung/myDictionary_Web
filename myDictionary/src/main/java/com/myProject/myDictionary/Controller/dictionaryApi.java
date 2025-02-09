@@ -21,8 +21,7 @@ public class dictionaryApi {
         try {
             Object response = restTemplate.getForObject(url , Object.class);
             dictionaryServiceMgr.save(response);
-
-            return ResponseEntity.ok(response);
+            return ResponseEntity.status(200).body(response);
         } catch(Exception e){
             return ResponseEntity.status(500).body("Error fetching word data: " + e.getMessage());
         }
