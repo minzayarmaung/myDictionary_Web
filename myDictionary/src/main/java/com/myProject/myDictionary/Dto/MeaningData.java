@@ -1,11 +1,8 @@
-package com.myProject.myDictionary.Entity;
+package com.myProject.myDictionary.Dto;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
-public class PhoneticsData {
+
+public class MeaningData {
 
     private String T1;
     private String T2;

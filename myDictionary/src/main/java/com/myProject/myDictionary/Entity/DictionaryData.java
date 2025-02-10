@@ -1,5 +1,7 @@
 package com.myProject.myDictionary.Entity;
 
+import com.myProject.myDictionary.Dto.MeaningData;
+import com.myProject.myDictionary.Dto.PhoneticsData;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

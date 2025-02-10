@@ -1,9 +1,8 @@
 package com.myProject.myDictionary.ServiceMgr;
 
-import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.myProject.myDictionary.Entity.DictionaryData;
-import com.myProject.myDictionary.Entity.MeaningData;
-import com.myProject.myDictionary.Entity.PhoneticsData;
+import com.myProject.myDictionary.Dto.MeaningData;
+import com.myProject.myDictionary.Dto.PhoneticsData;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
