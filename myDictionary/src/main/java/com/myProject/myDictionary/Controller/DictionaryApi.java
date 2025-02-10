@@ -1,8 +1,10 @@
 package com.myProject.myDictionary.Controller;
 
+import com.myProject.myDictionary.Entity.DictionaryData;
 import com.myProject.myDictionary.Entity.Result;
 import com.myProject.myDictionary.ServiceDao.DictionaryServiceDao;
 import com.myProject.myDictionary.ServiceMgr.DictionaryServiceMgr;
+import com.myProject.myDictionary.ServiceMgr.JsonDataMgr;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -25,7 +27,7 @@ public class DictionaryApi {
             Map<String, Object>[] response = restTemplate.getForObject(url, Map[].class);
 
             if(response.length > 0){
-                DictionaryServiceMgr.save(response[0]);
+                DictionaryData dictionaryData = JsonDataMgr.saveJsonData(response[0]);
                 return ResponseEntity.status(200).body(response);
             } else {
                 return ResponseEntity.status(404).body("Word not found.");

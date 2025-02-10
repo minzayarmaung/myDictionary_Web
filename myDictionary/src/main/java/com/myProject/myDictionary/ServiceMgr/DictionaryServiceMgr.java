@@ -9,14 +9,5 @@ import java.util.Map;
 @Service
 public class DictionaryServiceMgr {
 
-    public static void save( Map<String , Object> response) {
-        DictionaryData data = new DictionaryData();
 
-        String word = response.get("word").toString();
-        String phonetic = response.get("phonetic").toString();
-        data.setT1(word);
-
-
-
-    }
 }

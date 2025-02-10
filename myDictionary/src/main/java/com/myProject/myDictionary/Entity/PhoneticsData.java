@@ -1,24 +1,12 @@
 package com.myProject.myDictionary.Entity;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-
-@Entity
-@Table(name = "DICT001" , schema = "dbo")
 @AllArgsConstructor
 @NoArgsConstructor
-public class DictionaryData {
+public class PhoneticsData {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long syskey;
-
-    private String createdDate;
-    private String modifiedDate;
-    private String status;
     private String T1;
     private String T2;
     private String T3;
@@ -39,49 +27,6 @@ public class DictionaryData {
     private long N8;
     private long N9;
     private long N10;
-
-    PhoneticsData phoneticsData;
-    ArrayList<MeaningData> meaningData;
-
-    public ArrayList<MeaningData> getMeaningData() {
-        return meaningData;
-    }
-
-    public void setMeaningData(ArrayList<MeaningData> meaningData) {
-        this.meaningData = meaningData;
-    }
-
-    public PhoneticsData getPhoneticsData() {
-        return phoneticsData;
-    }
-
-    public void setPhoneticsData(PhoneticsData phoneticsData) {
-        this.phoneticsData = phoneticsData;
-    }
-
-    public String getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(String createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public String getModifiedDate() {
-        return modifiedDate;
-    }
-
-    public void setModifiedDate(String modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 
     public String getT1() {
         return T1;
