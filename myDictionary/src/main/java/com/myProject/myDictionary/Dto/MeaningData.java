@@ -1,7 +1,9 @@
 package com.myProject.myDictionary.Dto;
 
 
+import jakarta.persistence.Entity;
 
+@Entity
 public class MeaningData {
 
     private String T1;
