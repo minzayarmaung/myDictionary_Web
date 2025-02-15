@@ -1,12 +1,11 @@
 package com.myProject.myDictionary.Entity;
 
-import com.myProject.myDictionary.Dto.MeaningData;
-import com.myProject.myDictionary.Dto.PhoneticsData;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "DICT001" , schema = "dbo")
@@ -21,6 +20,7 @@ public class DictionaryData {
     private String createdDate;
     private String modifiedDate;
     private String status;
+    private long parentid;
     private String T1;
     private String T2;
     private String T3;
@@ -42,24 +42,11 @@ public class DictionaryData {
     private long N9;
     private long N10;
 
-    PhoneticsData phoneticsData;
-    ArrayList<MeaningData> meaningData;
+    @OneToMany(mappedBy = "dictionaryData", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<PhoneticsData> phonetics;
 
-    public ArrayList<MeaningData> getMeaningData() {
-        return meaningData;
-    }
-
-    public void setMeaningData(ArrayList<MeaningData> meaningData) {
-        this.meaningData = meaningData;
-    }
-
-    public PhoneticsData getPhoneticsData() {
-        return phoneticsData;
-    }
-
-    public void setPhoneticsData(PhoneticsData phoneticsData) {
-        this.phoneticsData = phoneticsData;
-    }
+    @OneToMany(mappedBy = "dictionaryData", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<MeaningData> meanings;
 
     public String getCreatedDate() {
         return createdDate;
@@ -79,6 +66,14 @@ public class DictionaryData {
 
     public String getStatus() {
         return status;
+    }
+
+    public long getParentid() {
+        return parentid;
+    }
+
+    public void setParentid(long parentid) {
+        this.parentid = parentid;
     }
 
     public void setStatus(String status) {

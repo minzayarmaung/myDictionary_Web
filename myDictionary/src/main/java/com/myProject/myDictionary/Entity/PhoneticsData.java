@@ -1,8 +1,25 @@
-package com.myProject.myDictionary.Dto;
+package com.myProject.myDictionary.Entity;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Entity
+@Table(name = "PHN001")
+@AllArgsConstructor
+@NoArgsConstructor
 public class PhoneticsData {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    private String createdDate;
+    private String modifiedDate;
+    private String status;
+    private long parentid;
     private String T1;
     private String T2;
     private String T3;
@@ -23,6 +40,38 @@ public class PhoneticsData {
     private long N8;
     private long N9;
     private long N10;
+
+    public String getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(String createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public String getModifiedDate() {
+        return modifiedDate;
+    }
+
+    public void setModifiedDate(String modifiedDate) {
+        this.modifiedDate = modifiedDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public long getParentid() {
+        return parentid;
+    }
+
+    public void setParentid(long parentid) {
+        this.parentid = parentid;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String getT1() {
         return T1;
@@ -183,4 +232,8 @@ public class PhoneticsData {
     public void setN10(long n10) {
         N10 = n10;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "dictionary_syskey")
+    private DictionaryData dictionaryData;
 }
