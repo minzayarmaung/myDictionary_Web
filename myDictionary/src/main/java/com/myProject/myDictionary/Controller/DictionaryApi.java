@@ -27,7 +27,6 @@ public class DictionaryApi {
             Map<String, Object>[] response = restTemplate.getForObject(url, Map[].class);
 
             if(response.length > 0){
-                DictionaryData dictionaryData = JsonDataMgr.saveJsonData(response[0]);
                 return ResponseEntity.status(200).body(response);
             } else {
                 return ResponseEntity.status(404).body("Word not found.");

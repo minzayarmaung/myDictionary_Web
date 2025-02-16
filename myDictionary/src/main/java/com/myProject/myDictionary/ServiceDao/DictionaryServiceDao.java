@@ -1,7 +1,9 @@
 package com.myProject.myDictionary.ServiceDao;
 
 import com.myProject.myDictionary.Controller.DictionaryApi;
+import com.myProject.myDictionary.Entity.DictionaryData;
 import com.myProject.myDictionary.Entity.Result;
+import com.myProject.myDictionary.ServiceMgr.JsonDataMgr;
 import com.myProject.myDictionary.Util.ServerUtil;
 import org.apache.catalina.Server;
 import org.springframework.stereotype.Service;
@@ -14,7 +16,7 @@ public class DictionaryServiceDao {
 
     public static Result saveData(DictionaryApi data) {
         Result res = new Result();
-
+        res.setState(false);
 
         return res;
     }
