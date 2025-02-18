@@ -1,18 +1,16 @@
 package com.myProject.myDictionary.ServiceMgr;
 
+import com.myProject.myDictionary.Controller.DictionaryApi;
 import com.myProject.myDictionary.Entity.DictionaryData;
 
-import com.myProject.myDictionary.Entity.MeaningData;
-import com.myProject.myDictionary.Entity.PhoneticsData;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Map;
 
 @Service
 public class JsonDataMgr {
 
-    public static DictionaryData saveJsonData(Map<String, Object> response) {
+    public static DictionaryData manageJsonData(Map<String, Object> response) {
 
         DictionaryData data = new DictionaryData();
 

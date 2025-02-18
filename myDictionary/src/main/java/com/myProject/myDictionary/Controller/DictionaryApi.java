@@ -36,8 +36,8 @@ public class DictionaryApi {
         }
     }
 
-    @PostMapping("/ ")
-    public Result saveWord(DictionaryApi data){
+    @PostMapping("/saveWord")
+    public Result saveWord(@RequestBody DictionaryData data){
         Result res = new Result();
         res.setState(false);
         res = DictionaryServiceDao.saveData(data);
