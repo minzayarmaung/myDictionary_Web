@@ -42,6 +42,10 @@ public class DictionaryData {
     private long N9;
     private long N10;
 
+    private String phonetic;
+    private List<String> sourceUrls;
+
+
     @OneToMany(mappedBy = "dictionaryData", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PhoneticsData> phonetics;
 
@@ -238,5 +242,37 @@ public class DictionaryData {
 
     public void setN10(long n10) {
         N10 = n10;
+    }
+
+    public String getPhonetic() {
+        return phonetic;
+    }
+
+    public void setPhonetic(String phonetic) {
+        this.phonetic = phonetic;
+    }
+
+    public List<String> getSourceUrls() {
+        return sourceUrls;
+    }
+
+    public void setSourceUrls(List<String> sourceUrls) {
+        this.sourceUrls = sourceUrls;
+    }
+
+    public List<PhoneticsData> getPhonetics() {
+        return phonetics;
+    }
+
+    public void setPhonetics(List<PhoneticsData> phonetics) {
+        this.phonetics = phonetics;
+    }
+
+    public List<MeaningData> getMeanings() {
+        return meanings;
+    }
+
+    public void setMeanings(List<MeaningData> meanings) {
+        this.meanings = meanings;
     }
 }

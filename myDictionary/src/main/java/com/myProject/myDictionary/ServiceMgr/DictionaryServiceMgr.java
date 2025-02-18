@@ -14,7 +14,10 @@ public class DictionaryServiceMgr {
     private DictionaryRepository dictionaryRepository;
 
 
-    public static DictionaryData saveJsonData(DictionaryData data) {
+    public static DictionaryData mapJsonData(DictionaryData data) {
+        DictionaryData dictionaryData = new DictionaryData();
+
+        System.out.println(dictionaryData.getT1());
 
 
         return data;

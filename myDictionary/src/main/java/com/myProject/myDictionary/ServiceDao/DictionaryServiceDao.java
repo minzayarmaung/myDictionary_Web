@@ -17,8 +17,8 @@ public class DictionaryServiceDao {
 
     public static Result saveData(DictionaryData data) {
         Result res = new Result();
-        res.setState(false);
-        DictionaryData dictionaryData = DictionaryServiceMgr.saveJsonData(data);
+        DictionaryData dictionaryData = DictionaryServiceMgr.mapJsonData(data);
+
 
 
         return res;
