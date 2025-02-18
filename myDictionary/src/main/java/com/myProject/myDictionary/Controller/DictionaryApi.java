@@ -36,7 +36,7 @@ public class DictionaryApi {
         }
     }
 
-    @PostMapping("/saveWord")
+    @PostMapping("/ ")
     public Result saveWord(DictionaryApi data){
         Result res = new Result();
         res.setState(false);
