@@ -1,5 +1,6 @@
 package com.myProject.myDictionary.Entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -21,7 +22,10 @@ public class DictionaryData {
     private String modifiedDate;
     private String status;
     private long parentid;
+
+    @JsonProperty("word")
     private String T1;
+    @JsonProperty("phonetic")
     private String T2;
     private String T3;
     private String T4;

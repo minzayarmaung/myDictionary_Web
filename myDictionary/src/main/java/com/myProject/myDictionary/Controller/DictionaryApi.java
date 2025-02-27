@@ -37,10 +37,10 @@ public class DictionaryApi {
     }
 
     @PostMapping("/saveWord")
-    public Result saveWord(@RequestBody DictionaryData data){
+    public ResponseEntity <Result> saveWord(@RequestBody DictionaryData data){
         Result res = new Result();
         res.setState(false);
         res = DictionaryServiceDao.saveData(data);
-        return res;
+        return ResponseEntity.ok(res);
     }
 }
